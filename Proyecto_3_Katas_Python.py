@@ -20,7 +20,11 @@ def letras():
 Dada una lista de números, obtén una nueva lista con el doble de cada valor.
 Usa la función map().
 """
-
+def diplicar():
+    numeros = input("escribe numeros separados por comas: ")
+    numlist = list(map(int, numeros.split(",")))
+    multiplicados_list = list(map(lambda x: x * 2, numlist))
+    print(multiplicados_list)
 """
 3.
 Escribe una función que tome una lista de palabras y una palabra objetivo como parámetros.
