@@ -46,7 +46,10 @@ def palabras():
 4.
 Genera una función que calcule la diferencia entre los valores de dos listas. Usa la función map()
 """
-
+def diflist():
+    list1 = list(map(int, input("Lista numeros 1 separada por comas: ").split(",")))
+    list2 = list(map(int, input("Lista numeros 2 separada por comas: ").split(",")))
+    print(list(map(lambda x, y: x - y, list1, list2)))
 """
 5.
 Escribe una función que tome una lista de números como parámetro y un valor opcional nota_aprobado (por defecto 5).
