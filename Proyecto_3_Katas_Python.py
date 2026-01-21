@@ -4,6 +4,16 @@ Escribe una función que reciba una cadena de texto como parámetro
 y devuelva un diccionario con las frecuencias de cada letra en la cadena.
 Los espacios no deben ser considerados.
 """
+def letras():
+    texto = input("Texto: ")
+    letras = {}    #Diccionario
+    texto_editado = texto.replace(" ", "") #quitar espacios
+    for let in texto_editado:
+        if let in letras:
+            letras[let] += 1
+        else:
+            letras[let] = 1
+    print(letras)
 
 """
 2.
