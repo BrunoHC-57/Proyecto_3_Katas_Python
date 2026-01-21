@@ -31,7 +31,17 @@ Escribe una función que tome una lista de palabras y una palabra objetivo como 
 La función debe devolver una lista con todas las palabras de la lista original que
 contengan la palabra objetivo.
 """
-
+def palabras():
+    palabras = input("escribe palabras separadas por espacios: ")
+    palist = palabras.split(" ")
+    objetivo = input("Palabra objetivo: ")
+    result = []
+    for p in palist:
+        if objetivo == p:
+            result.append(p)
+        else:
+            continue
+    print(result)
 """
 4.
 Genera una función que calcule la diferencia entre los valores de dos listas. Usa la función map()
