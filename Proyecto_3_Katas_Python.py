@@ -4,6 +4,9 @@ Escribe una función que reciba una cadena de texto como parámetro
 y devuelva un diccionario con las frecuencias de cada letra en la cadena.
 Los espacios no deben ser considerados.
 """
+from logging import exception
+
+
 def letras():
     texto = input("Texto: ")
     letras = {}    #Diccionario
@@ -137,7 +140,19 @@ def filtro_animales():
 Escribe una función que reciba una lista de números y calcule su promedio. Si la lista está vacía, lanza
 una excepción personalizada y maneja el error adecuadamente.
 """
+class errorlistavavia(Exception):
+    pass
+def promedio():
+    lista = list(map(int, input("Lista numeros separada por comas: ").split(",")))
+    try:
+        if not lista:
+            raise errorlistavavia("Lista VACIA no se puede calcular.")
+        promedio = sum(lista) / len(lista)
+        print(promedio)
 
+    except errorlistavavia as e:
+        print("error: ", e)
+#promedio()
 """
 11.
 Escribe un programa que pida al usuario que introduzca su edad. Si el usuario ingresa un valor no numérico
