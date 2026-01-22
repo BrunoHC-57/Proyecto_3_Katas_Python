@@ -14,7 +14,7 @@ def letras():
         else:
             letras[let] = 1
     print(letras)
-
+#letras()
 """
 2.
 Dada una lista de números, obtén una nueva lista con el doble de cada valor.
@@ -25,6 +25,7 @@ def diplicar():
     numlist = list(map(int, numeros.split(",")))
     multiplicados_list = list(map(lambda x: x * 2, numlist))
     print(multiplicados_list)
+#diplicar()
 """
 3.
 Escribe una función que tome una lista de palabras y una palabra objetivo como parámetros.
@@ -42,6 +43,7 @@ def palabras():
         else:
             continue
     print(result)
+#palabras()
 """
 4.
 Genera una función que calcule la diferencia entre los valores de dos listas. Usa la función map()
@@ -50,6 +52,7 @@ def diflist():
     list1 = list(map(int, input("Lista numeros 1 separada por comas: ").split(",")))
     list2 = list(map(int, input("Lista numeros 2 separada por comas: ").split(",")))
     print(list(map(lambda x, y: x - y, list1, list2)))
+#diflist()
 """
 5.
 Escribe una función que tome una lista de números como parámetro y un valor opcional nota_aprobado (por defecto 5).
@@ -65,11 +68,24 @@ def medianotas():
     else:
         resultado = "Suspenso"
     print(resultado, " con media de ", media )
+#medianotas()
 """
 6.
 Escribe una función que calcule el factorial de un número de manera recursiva.
 """
 
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def factorizar():
+    n = int(input("Que numero queres factorizar: "))
+    resultado = factorial(n)
+    print("El resultado es: ",resultado)
+
+#factorizar()
 """
 7.Genera una función que convierta una lista de tuplas a una lista de strings. Usa la función map().
 """
