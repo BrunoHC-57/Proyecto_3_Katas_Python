@@ -89,7 +89,18 @@ def factorizar():
 """
 7.Genera una función que convierta una lista de tuplas a una lista de strings. Usa la función map().
 """
-
+def cambiotuplas():
+    tuplas_lista = []
+    print("Escribe las tuplas separadas por comas poniendo ':)' al final para terminar")
+    while True:
+        tupla = input("Tupla: ")
+        if tupla == ":)":
+            break
+        tuplas = tuple(tupla.split(","))
+        tuplas_lista.append(tuplas)
+    resultado = list(map(lambda t: " ".join(t), tuplas_lista))
+    print(resultado)
+#cambiotuplas()
 """
 8.
 Escribe un programa que pida al usuario dos números e intente dividirlos.
