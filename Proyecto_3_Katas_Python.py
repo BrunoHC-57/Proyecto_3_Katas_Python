@@ -56,7 +56,15 @@ Escribe una función que tome una lista de números como parámetro y un valor o
 La función debe calcular la media de los números en la lista y determinar si la media es mayor o igual que nota_aprobado.
 Si es así, el estado será "aprobado"; de lo contrario, "suspenso". La función debe devolver una tupla que contenga la media y el estado.
 """
-
+def medianotas():
+    notas = list(map(int, input("Notas de los estudiantes separados por comas: ").split(",")))
+    aproado = 5
+    media = sum(notas) / len(notas)
+    if media >= aproado:
+        resultado = "Aprobado"
+    else:
+        resultado = "Suspenso"
+    print(resultado, " con media de ", media )
 """
 6.
 Escribe una función que calcule el factorial de un número de manera recursiva.
