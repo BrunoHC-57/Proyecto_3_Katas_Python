@@ -107,14 +107,31 @@ Escribe un programa que pida al usuario dos números e intente dividirlos.
 Si el usuario ingresa un valor no numérico o intenta dividir por cero, maneja esas excepciones de manera
 adecuada y muestra un mensaje indicando si la división fue exitosa o no.
 """
-
+def dividiendo():
+    try:
+        numero1 = float(input("Primer numero: "))
+        numero2 = float(input("Segundo numero: "))
+        resultado = numero1 / numero2
+    except ValueError:
+        print("introduce numeros")
+    except ZeroDivisionError:
+        print("No se puede dividir por 0")
+    else:
+        print("El resultado es: ", resultado)
+#dividiendo()
 """
 9.
 Escribe una función que tome una lista de nombres de mascotas como parámetro y devuelva una nueva lista
 excluyendo ciertas mascotas prohibidas en España. La lista de mascotas a excluir es ["Mapache", "Tigre",
 "Serpiente Pitón", "Cocodrilo", "Oso"]. Usa la función filter().
 """
-
+def filtro_animales():
+    ilegal = ["mapache", "tigre", "serpiente pitón", "cocodrilo", "oso"]
+    animalesimput = input("Introduce los animales separados por comas: ").lower()
+    animales = list(map(str.strip, animalesimput.split(",")))
+    legal = list(filter(lambda m: m not in ilegal, animales))
+    print(legal)
+#filtro_animales()
 """
 10.
 Escribe una función que reciba una lista de números y calcule su promedio. Si la lista está vacía, lanza
