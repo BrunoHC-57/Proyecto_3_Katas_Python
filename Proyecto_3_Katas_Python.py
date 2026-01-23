@@ -182,6 +182,11 @@ def frase():
 Genera una función que, para un conjunto de caracteres, devuelva una lista de tuplas con cada letra en mayúsculas y minúsculas.
 Las letras no pueden estar repetidas. Usa la función map().
 """
+def caracteres():
+    caracters = set(input("Introduce un conjunto de caracteres: "))
+    result = list(map(lambda x: (x.upper(), x.lower()), caracters))
+    print(result)
+caracteres()
 
 """
 14.
