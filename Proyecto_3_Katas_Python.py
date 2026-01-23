@@ -186,13 +186,19 @@ def caracteres():
     caracters = set(input("Introduce un conjunto de caracteres: "))
     result = list(map(lambda x: (x.upper(), x.lower()), caracters))
     print(result)
-caracteres()
+#caracteres()
 
 """
 14.
 Crea una función que retorne las palabras de una lista que comiencen con una letra en específico. Usa la función filter().
 """
-
+def especific():
+    palabras = input("Palabras separadas por comas: ").split(",")
+    letra = input("Letra inicial: ")
+    palabras = [p.strip() for p in palabras]
+    result = list(filter(lambda x: x.startswith(letra), palabras))
+    print(result)
+especific()
 """
 15.
 Crea una función lambda que sume 3 a cada número de una lista dada.
