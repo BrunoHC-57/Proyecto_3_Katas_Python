@@ -158,7 +158,15 @@ def promedio():
 Escribe un programa que pida al usuario que introduzca su edad. Si el usuario ingresa un valor no numérico
 o un valor fuera del rango esperado (por ejemplo, menor que 0 o mayor que 120), maneja las excepciones adecuadamente
 """
-
+def edad():
+    try:
+        edad = int(input("Edad: "))
+        if edad < 0 or edad > 120:
+            raise ValueError("Edad no valida")
+        print("Edad: ", edad)
+    except ValueError as e:
+        print("error", e)
+#edad()
 """
 12.
 Genera una función que, al recibir una frase, devuelva una lista con la longitud de cada palabra. Usa la función map().
