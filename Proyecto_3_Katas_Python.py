@@ -198,12 +198,17 @@ def especific():
     palabras = [p.strip() for p in palabras]
     result = list(filter(lambda x: x.startswith(letra), palabras))
     print(result)
-especific()
+#especific()
 """
 15.
 Crea una función lambda que sume 3 a cada número de una lista dada.
 """
-
+def suma3():
+    numeros = input("Introduce numeros separados por comas; ").split(",")
+    numeros = list(map(int, numeros))
+    resul = list(map(lambda x: x + 3, numeros))
+    print(resul)
+suma3()
 """
 16.
 Escribe una función que tome una cadena de texto y un número entero n como parámetros y devuelva una lista de todas las palabras
