@@ -171,7 +171,12 @@ def edad():
 12.
 Genera una función que, al recibir una frase, devuelva una lista con la longitud de cada palabra. Usa la función map().
 """
-
+def frase():
+    frase = input("Frease: ")
+    palabras = frase.split()
+    long = list(map(len, palabras))
+    print(long)
+#frase()
 """
 13.
 Genera una función que, para un conjunto de caracteres, devuelva una lista de tuplas con cada letra en mayúsculas y minúsculas.
