@@ -1,3 +1,5 @@
+from functools import reduce
+
 """
 1.
 Escribe una función que reciba una cadena de texto como parámetro
@@ -226,7 +228,12 @@ def palargas():
 Crea una función que tome una lista de dígitos y devuelva el número correspondiente. Por ejemplo, [5,7,2] corresponde al número 572.
 Usa la función reduce().
 """
-
+def numdelist():
+    numeros = input("Introduce los digitos del numero separados por espacios: ")
+    lista = list(map(int, numeros.split()))
+    bumero = reduce(lambda acc, digito: acc * 10 + digito, lista)
+    print(bumero)
+numdelist()
 """
 18.
 Escribe un programa en Python que cree una lista de diccionarios con información de estudiantes (nombre, edad, calificación) y use filter
