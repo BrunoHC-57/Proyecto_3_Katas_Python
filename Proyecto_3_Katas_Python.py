@@ -255,12 +255,17 @@ def buenosestudiantes():
         estudiantes.append(estudiante)
     aprobados = list(filter(lambda e: e["nota"] >= 90, estudiantes))
     print(aprobados)
-buenosestudiantes()
+#buenosestudiantes()
 """
 19.
 Crea una función lambda que filtre los números impares de una lista dada.
 """
-
+def impares():
+    entrada = input("Numeros separados por espacios: ")
+    numeros = list(map(int, entrada.split()))
+    impar = list(filter(lambda x: x % 2 != 0, numeros))
+    print(impar)
+impares()
 """
 20.
 Para una lista con elementos de tipo integer y string, obtén una nueva lista solo con los valores int. Usa la función filter().
