@@ -233,7 +233,7 @@ def numdelist():
     lista = list(map(int, numeros.split()))
     bumero = reduce(lambda acc, digito: acc * 10 + digito, lista)
     print(bumero)
-numdelist()
+#numdelist()
 """
 18.
 Escribe un programa en Python que cree una lista de diccionarios con información de estudiantes (nombre, edad, calificación) y use filter
