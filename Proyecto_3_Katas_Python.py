@@ -265,11 +265,23 @@ def impares():
     numeros = list(map(int, entrada.split()))
     impar = list(filter(lambda x: x % 2 != 0, numeros))
     print(impar)
-impares()
+#impares()
 """
 20.
 Para una lista con elementos de tipo integer y string, obtén una nueva lista solo con los valores int. Usa la función filter().
 """
+def filtrar():
+    elementos = input("mete numeros y palabras separados por espacios: ")
+    elements = []
+    for e in elementos.split():
+        if e.isdigit():
+            elements.append(int(e))
+        else:
+            elements.append(e)
+    enteros = list(filter(lambda x: isinstance(x, int), elements))
+    print(enteros)
+filtrar()
+
 
 """
 21.
