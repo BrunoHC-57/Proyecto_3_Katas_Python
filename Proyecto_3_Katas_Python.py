@@ -208,13 +208,19 @@ def suma3():
     numeros = list(map(int, numeros))
     resul = list(map(lambda x: x + 3, numeros))
     print(resul)
-suma3()
+#suma3()
 """
 16.
 Escribe una función que tome una cadena de texto y un número entero n como parámetros y devuelva una lista de todas las palabras
 que sean más largas que n. Usa la función filter().
 """
-
+def palargas():
+    texto = input("Introduce una frase: ")
+    n = int(input("Introduce un numero entero: "))
+    palabras = texto.split()
+    res = list(filter(lambda palabra: len(palabra) > n, palabras))
+    print("Resultado: ", res)
+#palargas()
 """
 17.
 Crea una función que tome una lista de dígitos y devuelva el número correspondiente. Por ejemplo, [5,7,2] corresponde al número 572.
