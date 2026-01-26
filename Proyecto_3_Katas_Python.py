@@ -239,7 +239,23 @@ def numdelist():
 Escribe un programa en Python que cree una lista de diccionarios con información de estudiantes (nombre, edad, calificación) y use filter
 para extraer a los estudiantes con una calificación mayor o igual a 90.
 """
-
+def buenosestudiantes():
+    estudiantes = []
+    cuantosestu = int(input("Cuantos estudiantes hay: "))
+    for i in range(cuantosestu):
+        print("Estudiante ", i + 1)
+        nombre = input("nombre: ")
+        edad = int(input("Eda: "))
+        nota = float(input("nota: "))
+        estudiante = {
+            "nombre": nombre,
+            "edad": edad,
+            "nota": nota
+        }
+        estudiantes.append(estudiante)
+    aprobados = list(filter(lambda e: e["nota"] >= 90, estudiantes))
+    print(aprobados)
+buenosestudiantes()
 """
 19.
 Crea una función lambda que filtre los números impares de una lista dada.
