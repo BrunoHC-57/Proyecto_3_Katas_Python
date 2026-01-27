@@ -326,7 +326,11 @@ def totaldif():
 25.
 Crea una función que cuente el número de caracteres en una cadena de texto dada.
 """
-
+def concar():
+    text = input("introdce un texto: ")
+    cant = len(text)
+    print(cant)
+concar()
 """
 26.
 Crea una función lambda que calcule el resto de la división entre dos números dados.
