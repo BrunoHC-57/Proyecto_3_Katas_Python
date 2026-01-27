@@ -301,12 +301,17 @@ def productos():
     numero = list(map(int, entrada.split()))
     produc = reduce(lambda x, y: x * y, numero)
     print(produc)
-productos()
+#productos()
 """
 23.
 Concatena una lista de palabras. Usa la función reduce().
 """
-
+def concatpalabras():
+    entrada = input("palabras separadas por espacios: ")
+    palabras = entrada.split()
+    resul = reduce(lambda x, y: x + y, palabras)
+    print(resul)
+concatpalabras()
 """
 24.
 Calcula la diferencia total en los valores de una lista. Usa la función reduce().
