@@ -280,14 +280,18 @@ def filtrar():
             elements.append(e)
     enteros = list(filter(lambda x: isinstance(x, int), elements))
     print(enteros)
-filtrar()
+#filtrar()
 
 
 """
 21.
 Crea una función que calcule el cubo de un número dado mediante una función lambda.
 """
-
+def cubo():
+    numero = int(input("Numero para el cubo: "))
+    cubo = (lambda x: x ** 3)(numero)
+    print(cubo)
+cubo()
 """
 22.
 Dada una lista numérica, obtén el producto total de los valores. Usa la función reduce().
