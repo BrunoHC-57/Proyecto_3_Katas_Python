@@ -311,12 +311,17 @@ def concatpalabras():
     palabras = entrada.split()
     resul = reduce(lambda x, y: x + y, palabras)
     print(resul)
-concatpalabras()
+#concatpalabras()
 """
 24.
 Calcula la diferencia total en los valores de una lista. Usa la función reduce().
 """
-
+def totaldif():
+    entrada = input(" numeros separados por espacios: ")
+    num = list(map(int, entrada.split()))
+    res = reduce(lambda x, y: x -y, num)
+    print(res)
+#totaldif()
 """
 25.
 Crea una función que cuente el número de caracteres en una cadena de texto dada.
