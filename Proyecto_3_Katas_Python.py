@@ -291,12 +291,17 @@ def cubo():
     numero = int(input("Numero para el cubo: "))
     cubo = (lambda x: x ** 3)(numero)
     print(cubo)
-cubo()
+#cubo()
 """
 22.
 Dada una lista numérica, obtén el producto total de los valores. Usa la función reduce().
 """
-
+def productos():
+    entrada = input("numeros separados por espacios: ")
+    numero = list(map(int, entrada.split()))
+    produc = reduce(lambda x, y: x * y, numero)
+    print(produc)
+productos()
 """
 23.
 Concatena una lista de palabras. Usa la función reduce().
