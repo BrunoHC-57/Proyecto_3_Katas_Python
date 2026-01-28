@@ -365,12 +365,20 @@ def dupe():
             return
         vistos.add(e)
     print("No hay dupes")
-dupe()
+#dupe()
 """
 29.
 Crea una función que convierta una variable en una cadena de texto y enmascare todos los caracteres con el carácter '#' excepto los últimos cuatro.
 """
-
+def masc():
+    entrada = input("valor a enmascarar: ")
+    texto = str(entrada)
+    if len(texto) <= 4:
+        resul = texto
+    else:
+        resul = "#" * (len(texto) - 4) + texto[-4:]
+        print(resul)
+masc()
 """
 30.
 Crea una función que determine si dos palabras son anagramas, es decir, si están formadas por las mismas letras pero en diferente orden.
