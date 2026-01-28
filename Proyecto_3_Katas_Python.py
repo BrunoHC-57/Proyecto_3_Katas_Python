@@ -340,7 +340,7 @@ def resto():
     num2 = int(input("introduce un segundo numero: "))
     res = (lambda x, y: x % y)(num1, num2)
     print(res)
-resto()
+#resto()
 """
 27.
 Crea una función que calcule el promedio de una lista de números.
