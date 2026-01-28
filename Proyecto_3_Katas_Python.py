@@ -345,7 +345,12 @@ def resto():
 27.
 Crea una función que calcule el promedio de una lista de números.
 """
-
+def promedio():
+    entrada = input("numeros separados por espacios: ")
+    numeros = list(map(float, entrada.split()))
+    promedio = sum(numeros) / len(numeros)
+    print(promedio)
+promedio()
 """
 28.
 Crea una función que busque y devuelva el primer elemento duplicado en una lista dada.
