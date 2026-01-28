@@ -330,12 +330,17 @@ def concar():
     text = input("introdce un texto: ")
     cant = len(text)
     print(cant)
-concar()
+#concar()
 """
 26.
 Crea una función lambda que calcule el resto de la división entre dos números dados.
 """
-
+def resto():
+    num1 = int(input("introduce un numero: "))
+    num2 = int(input("introduce un segundo numero: "))
+    res = (lambda x, y: x % y)(num1, num2)
+    print(res)
+resto()
 """
 27.
 Crea una función que calcule el promedio de una lista de números.
