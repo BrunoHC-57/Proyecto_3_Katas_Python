@@ -378,12 +378,19 @@ def masc():
     else:
         resul = "#" * (len(texto) - 4) + texto[-4:]
         print(resul)
-masc()
+#masc()
 """
 30.
 Crea una función que determine si dos palabras son anagramas, es decir, si están formadas por las mismas letras pero en diferente orden.
 """
-
+def anagramas():
+    pal1 = input("primera palabra: ")
+    pal2 = input("segunda palabra: ")
+    if sorted(pal1) == sorted(pal2):
+        print("son anagramas")
+    else:
+        print("no son anagramas")
+anagramas()
 """
 31.
 Crea una función que solicite al usuario ingresar una lista de nombres y luego un nombre para buscar en esa lista. Si el nombre está en la lista,
