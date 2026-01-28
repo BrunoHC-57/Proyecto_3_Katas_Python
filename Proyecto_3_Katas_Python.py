@@ -350,12 +350,22 @@ def promedio():
     numeros = list(map(float, entrada.split()))
     promedio = sum(numeros) / len(numeros)
     print(promedio)
-promedio()
+#promedio()
 """
 28.
 Crea una función que busque y devuelva el primer elemento duplicado en una lista dada.
 """
-
+def dupe():
+    entrada = input("introduce cualquier cosa separada por comas: ")
+    elementos = entrada.split()
+    vistos = set()
+    for e in elementos:
+        if e in vistos:
+            print(e)
+            return
+        vistos.add(e)
+    print("No hay dupes")
+dupe()
 """
 29.
 Crea una función que convierta una variable en una cadena de texto y enmascare todos los caracteres con el carácter '#' excepto los últimos cuatro.
