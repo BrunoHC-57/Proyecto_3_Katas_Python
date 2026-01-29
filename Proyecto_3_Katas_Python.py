@@ -432,7 +432,12 @@ def empleados():
 33.
 Crea una función lambda que sume elementos correspondientes de dos listas dadas.
 """
-
+def listasum():
+    lista1 = list(map(int, input("mete la primera lista de nimeros separada por espacios: ").split()))
+    lista2 = list(map(int, input("mete la segunda lista de nimeros separada por espacios: ").split()))
+    suma = list(map(lambda x, y: x + y, lista1, lista2))
+    print(suma)
+listasum()
 """
 34.
 Crea la clase Arbol
