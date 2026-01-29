@@ -437,7 +437,7 @@ def listasum():
     lista2 = list(map(int, input("mete la segunda lista de nimeros separada por espacios: ").split()))
     suma = list(map(lambda x, y: x + y, lista1, lista2))
     print(suma)
-listasum()
+#listasum()
 """
 34.
 Crea la clase Arbol
@@ -461,7 +461,34 @@ Caso de uso:
         f. Retirar la rama situada en la posición 2.
         g. Obtener información sobre el árbol.
 """
-
+class Arbol:
+    def __init__(self):
+        self.tronco = 1
+        self.ramas = []
+    def crecertronco(self):
+        self.tronco += 1
+    def nuevarama(self):
+        self.ramas.append(1)
+    def crecerramas(self):
+        self.ramas = [rama + 1 for rama in self.ramas]
+    def quitarrama(self, posicion):
+        if 0 <= posicion < len(self.ramas):
+            self.ramas.pop(posicion)
+    def infoarbol(self):
+        return {
+            "la longitud del tronco es": self.tronco,
+            "el numero de  es": len(self.ramas),
+            "las longitudes de las ramas es": self.ramas
+        }
+#caso de uso
+miarbol = Arbol()
+miarbol.crecertronco()
+miarbol.nuevarama()
+miarbol.crecerramas()
+miarbol.nuevarama()
+miarbol.nuevarama()
+miarbol.quitarrama(2)
+print(miarbol.infoarbol())
 """
 35.
 Crea la clase UsuarioBanco
