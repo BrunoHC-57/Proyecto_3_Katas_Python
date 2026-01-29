@@ -465,30 +465,32 @@ class Arbol:
     def __init__(self):
         self.tronco = 1
         self.ramas = []
-    def crecertronco(self):
+    def crecer_tronco(self):
         self.tronco += 1
-    def nuevarama(self):
+    def nueva_rama(self):
         self.ramas.append(1)
-    def crecerramas(self):
+    def crecer_ramas(self):
         self.ramas = [rama + 1 for rama in self.ramas]
-    def quitarrama(self, posicion):
+    def quitar_rama(self, posicion):
         if 0 <= posicion < len(self.ramas):
             self.ramas.pop(posicion)
-    def infoarbol(self):
+    def info_arbol(self):
         return {
             "la longitud del tronco es": self.tronco,
             "el numero de  es": len(self.ramas),
             "las longitudes de las ramas es": self.ramas
         }
-#caso de uso
+#caso de uso comentado para que no interfiera en las demas ejecuiones
+"""
 miarbol = Arbol()
-miarbol.crecertronco()
-miarbol.nuevarama()
-miarbol.crecerramas()
-miarbol.nuevarama()
-miarbol.nuevarama()
-miarbol.quitarrama(2)
-print(miarbol.infoarbol())
+miarbol.crecer_tronco()
+miarbol.nueva_rama()
+miarbol.crecer_ramas()
+miarbol.nueva_rama()
+miarbol.nueva_rama()
+miarbol.quitar_rama(2)
+print(miarbol.info_arbol())
+"""
 """
 35.
 Crea la clase UsuarioBanco
@@ -506,6 +508,40 @@ Caso de uso:
         c. Transferir 80 unidades de Bob a Alicia.
         d. Retirar 50 unidades del saldo de Alicia.
 """
+class UsuarioBanco:
+    def __init__(self, nombre, saldo, cuenta):
+        self.nombre = nombre
+        self.saldo = saldo
+        self.cuenta = cuenta
+    def retirar_dinero(self, cantidad):
+        if cantidad <= self.saldo:
+            print(self.nombre, "retiro: ", cantidad, "saldo actual: ", self.saldo)
+        else:
+            raise ValueError(self.nombre, "no tiene suficiente dinero para retirar: ", cantidad)
+    def transferir_dinero(self, destinatario, cantidad):
+        if cantidad <= self.saldo:
+            self.saldo -= cantidad
+            destinatario.saldo += cantidad
+            print(self.nombre, "transfirio: ", cantidad, "a", destinatario.nombre)
+        else:
+            raise ValueError(self.nombre, "no tienes suficiente dinero para la transferencia de: ", cantidad)
+    def agregar_dinero(self, cantidad):
+        self.saldo += cantidad
+        print(self.nombre, "recibio: ", cantidad, "saldo actual: ", self.saldo)
+#caso de uso
+alicia = UsuarioBanco("alicia", 100, True)
+bob = UsuarioBanco("bob", 50, True)
+bob.agregar_dinero(20)
+try:
+    bob.transferir_dinero(alicia, 80)
+except ValueError as e:
+    print(e)
+bob.agregar_dinero(10)
+bob.transferir_dinero(alicia, 80)
+alicia.retirar_dinero(50)
+print("saldo final de alicia: ", alicia.saldo)
+print("saldo final de bob: ", bob.saldo)
+
 
 """
 36.
