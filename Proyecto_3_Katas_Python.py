@@ -404,13 +404,30 @@ def nombre():
         print("se ha encontrado el nombre: ", buscanombre)
     else:
         raise ValueError("el nombre no fue encontrado")
-nombre()
+#nombre()
 """
 32.
 Crea una función que tome un nombre completo y una lista de empleados, busque el nombre en la lista y devuelva el puesto del empleado si se encuentra;
 de lo contrario, devuelve un mensaje indicando que la persona no trabaja aquí.
 """
-
+def empleados():
+    empleados = []
+    cantidad = int(input("numero de empleados: "))
+    for i in range(cantidad):
+        print("empleado", i + 1)
+        nombre = input("nombre completo: ")
+        puesto = input("puesto: ")
+        empleados.append({
+            "nombre": nombre,
+            "puesto": puesto
+        })
+    buscanombre = input("nombre a buscar: ")
+    for empleado in empleados:
+        if empleado["nombre"] == buscanombre:
+            print("el puesto de", buscanombre, "es: ", empleado['puesto'])
+            return
+    print("no trabaja aqui")
+empleados()
 """
 33.
 Crea una función lambda que sume elementos correspondientes de dos listas dadas.
