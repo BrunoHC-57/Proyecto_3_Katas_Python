@@ -390,13 +390,21 @@ def anagramas():
         print("son anagramas")
     else:
         print("no son anagramas")
-anagramas()
+#anagramas()
 """
 31.
 Crea una función que solicite al usuario ingresar una lista de nombres y luego un nombre para buscar en esa lista. Si el nombre está en la lista,
 imprime un mensaje indicando que fue encontrado; de lo contrario, lanza una excepción.
 """
-
+def nombre():
+    entrada = input("nombres separados por eespacios: ")
+    nombres = entrada.split()
+    buscanombre = input("nombre que buscar: ")
+    if buscanombre in nombres:
+        print("se ha encontrado el nombre: ", buscanombre)
+    else:
+        raise ValueError("el nombre no fue encontrado")
+nombre()
 """
 32.
 Crea una función que tome un nombre completo y una lista de empleados, busque el nombre en la lista y devuelva el puesto del empleado si se encuentra;
