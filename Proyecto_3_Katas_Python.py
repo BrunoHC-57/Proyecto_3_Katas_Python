@@ -427,7 +427,7 @@ def empleados():
             print("el puesto de", buscanombre, "es: ", empleado['puesto'])
             return
     print("no trabaja aqui")
-empleados()
+#empleados()
 """
 33.
 Crea una función lambda que sume elementos correspondientes de dos listas dadas.
