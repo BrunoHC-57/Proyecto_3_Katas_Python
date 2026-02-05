@@ -1,5 +1,7 @@
 from functools import reduce
 
+from scripts.h2py import process
+
 """
 1.
 Escribe una función que reciba una cadena de texto como parámetro
@@ -529,6 +531,7 @@ class UsuarioBanco:
         self.saldo += cantidad
         print(self.nombre, "recibio: ", cantidad, "saldo actual: ", self.saldo)
 #caso de uso
+"""
 alicia = UsuarioBanco("alicia", 100, True)
 bob = UsuarioBanco("bob", 50, True)
 bob.agregar_dinero(20)
@@ -541,7 +544,7 @@ bob.transferir_dinero(alicia, 80)
 alicia.retirar_dinero(50)
 print("saldo final de alicia: ", alicia.saldo)
 print("saldo final de bob: ", bob.saldo)
-
+"""
 
 """
 36.
@@ -557,6 +560,47 @@ Código a seguir:
 Caso de uso:
 Verificar el funcionamiento completo de procesar_texto.
 """
+def contar_palabra(texto):
+    palabras = texto.lower().split()
+    contador = {}
+    for palabra in palabras:
+        contador[palabra] = contador.get(palabra, 0) + 1
+    return contador
+def remplazar_palabra(texto, original, nueva):
+    return texto.replace(original, nueva)
+def eliminar_palabra(texto, palabra):
+    palabras = texto.split()
+    resultado = []
+    for p in palabras:
+        if p != palabra:
+            resultado.append(p)
+    return " ".join(resultado)
+def procesar_texto(texto, opcion, *args):
+    if opcion == "contar":
+        return contar_palabra(texto)
+    elif opcion == "reemplazar":
+        return remplazar_palabra(texto, args[0], args[1])
+    elif opcion == "eliminar":
+        return eliminar_palabra(texto, args[0])
+    else:
+        return "opcion no valida"
+#caso de uso
+texto = input("Introduce texto: ")
+opcion = input("Elije la opcion que quieras: contar, reemplazar o eliminar --> ")
+if opcion == "contar":
+   resultado = procesar_texto(texto, opcion)
+elif opcion == "reemplazar":
+    original = input("remplazar palabra: ")
+    nueva = input("palabra nueva: ")
+    resultado = procesar_texto(texto, opcion, original, nueva)
+elif opcion == "eliminar":
+    palabra = input("eliminar palabra: ")
+    resultado = procesar_texto(texto, opcion, palabra)
+else:
+    resultado = "opcion no valida"
+print("resultado: ")
+print(resultado)
+
 
 """
 37.
