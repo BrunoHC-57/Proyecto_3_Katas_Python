@@ -585,6 +585,7 @@ def procesar_texto(texto, opcion, *args):
     else:
         return "opcion no valida"
 #caso de uso
+"""
 texto = input("Introduce texto: ")
 opcion = input("Elije la opcion que quieras: contar, reemplazar o eliminar --> ")
 if opcion == "contar":
@@ -600,13 +601,23 @@ else:
     resultado = "opcion no valida"
 print("resultado: ")
 print(resultado)
-
+"""
 
 """
 37.
 Genera un programa que nos indique si es de noche, de día o de tarde según la hora proporcionada por el usuario.
 """
-
+def nochedia():
+    hora = int(input("que hora es(0-23): "))
+    if hora < 0 or hora > 23:
+        print("hora no valida")
+    elif hora < 8 or hora >= 18:
+        print("noche")
+    elif hora < 12:
+        print("dia, por la mañana")
+    else:
+        print("dia, por la tarde")
+nochedia()
 """
 38.
 Escribe un programa que determine qué calificación en texto tiene un alumno según su calificación numérica.
