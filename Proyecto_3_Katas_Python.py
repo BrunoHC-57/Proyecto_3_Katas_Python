@@ -31,7 +31,7 @@ Usa la función map().
 def diplicar():
     numeros = input("escribe numeros separados por comas: ")
     numlist = list(map(int, numeros.split(",")))
-    multiplicados_list = list(map(lambda x: x * 2, numlist))
+    multiplicados_list = list(map(lambda x: x * 2, numlist))  #no me acordaba de lambda tube que revisarlo
     print(multiplicados_list)
 #diplicar()
 """
@@ -145,7 +145,7 @@ def filtro_animales():
 Escribe una función que reciba una lista de números y calcule su promedio. Si la lista está vacía, lanza
 una excepción personalizada y maneja el error adecuadamente.
 """
-class errorlistavavia(Exception):
+class errorlistavavia(Exception): #no me acordaba como funcionaba lo de la clase tuve que revisarlo
     pass
 def promedio():
     lista = list(map(int, input("Lista numeros separada por comas: ").split(",")))
@@ -234,7 +234,7 @@ Usa la función reduce().
 def numdelist():
     numeros = input("Introduce los digitos del numero separados por espacios: ")
     lista = list(map(int, numeros.split()))
-    bumero = reduce(lambda acc, digito: acc * 10 + digito, lista)
+    bumero = reduce(lambda acc, digito: acc * 10 + digito, lista)   #tuve que repasar porque no me acordaba
     print(bumero)
 #numdelist()
 """
@@ -464,7 +464,7 @@ Caso de uso:
         f. Retirar la rama situada en la posición 2.
         g. Obtener información sobre el árbol.
 """
-class Arbol:
+class Arbol:                #me lie mucho con el self y al final con las explicaciones de la ia lo entendi y lo pude hacer
     def __init__(self):
         self.tronco = 1
         self.ramas = []
@@ -561,7 +561,7 @@ Código a seguir:
 Caso de uso:
 Verificar el funcionamiento completo de procesar_texto.
 """
-def contar_palabra(texto):
+def contar_palabra(texto):          #Ejercicio con el que mas me lie al final preguntando dudas a la ia lo saque
     palabras = texto.lower().split()
     contador = {}
     for palabra in palabras:
@@ -706,4 +706,4 @@ def compra():
         finalprice = precio
         print("respuesta invalida, no discount")
     print("precio final: ", finalprice, "€")
-compra()
+#compra()
