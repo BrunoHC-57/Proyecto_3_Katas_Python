@@ -659,6 +659,7 @@ def calcfig(figura, datos):
     else:
         return "figura no valida"
 #Caso de uso
+"""
 figura = input("di una figura entre rectangulo, circulo o triangulo: ").lower()
 if figura == "rectangulo":
     base = float(input("Base:"))
@@ -675,6 +676,7 @@ else:
     print("figura incorrecta")
 area = calcfig(figura, datos)
 print("Area: ", area)
+"""
 
 """
 40.
@@ -686,3 +688,22 @@ Escribe un programa en Python que utilice condicionales para determinar el monto
     e. Mostrar el precio final de la compra, considerando o no el descuento.
     f. Usar estructuras de control de flujo (if, elif, else) para llevar a cabo las acciones.
 """
+def compra():
+    precio = float(input("precio original: "))
+    cupon = input("Tienes cipones (si o no): ")
+    if cupon == "si":
+        descuento = float(input("introduce el valor del descuento: "))
+        if descuento > 0 and descuento <= precio:
+            finalprice = precio - descuento
+            print("descuento de ", descuento, "€ aplicado")
+        else:
+            print("Cupon invalido")
+            finalprice = precio
+    elif cupon == "no":
+        finalprice = precio
+        print("no se aplica ningun decuento")
+    else:
+        finalprice = precio
+        print("respuesta invalida, no discount")
+    print("precio final: ", finalprice, "€")
+compra()
