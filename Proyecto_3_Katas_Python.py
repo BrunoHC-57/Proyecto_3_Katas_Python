@@ -1,6 +1,7 @@
 from functools import reduce
+import math
 
-from scripts.h2py import process
+from adodbapi.apibase import adoLongTypes
 
 """
 1.
@@ -639,12 +640,41 @@ def nota():
         print("Muy bien")
     else:
         print("excelente")
-nota()
+#nota()
 """
 39.
 Escribe una función que tome dos parámetros: figura (una cadena que puede ser "rectangulo", "circulo" o "triangulo") y
 datos (una tupla con los datos necesarios para calcular el área de la figura).
 """
+def calcfig(figura, datos):
+    if figura == "rectangulo":
+        base, altura = datos
+        return base * altura
+    elif figura == "circulo":
+        radio = datos
+        return math.pi * radio ** 2
+    elif figura == "triangulo":
+        base, altura = datos
+        return (base * altura) / 2
+    else:
+        return "figura no valida"
+#Caso de uso
+figura = input("di una figura entre rectangulo, circulo o triangulo: ").lower()
+if figura == "rectangulo":
+    base = float(input("Base:"))
+    altura = float(input("altura: "))
+    datos = (base, altura)
+elif figura == "circulo":
+    radio = float(input("radio: "))
+    datos = radio
+elif figura == " triangulo":
+    base = float(input("base: "))
+    altura = float(input("altura: "))
+    datos = (base, altura)
+else:
+    print("figura incorrecta")
+area = calcfig(figura, datos)
+print("Area: ", area)
 
 """
 40.
