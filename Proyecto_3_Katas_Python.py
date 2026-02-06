@@ -617,7 +617,7 @@ def nochedia():
         print("dia, por la mañana")
     else:
         print("dia, por la tarde")
-nochedia()
+#nochedia()
 """
 38.
 Escribe un programa que determine qué calificación en texto tiene un alumno según su calificación numérica.
@@ -627,7 +627,19 @@ Reglas:
         80 - 89: muy bien
         90 - 100: excelente
 """
-
+def nota():
+    nota = int(input("Que nota has sacado del 0-100: "))
+    if nota < 0 or nota > 100:
+        print("Nota invalida")
+    elif nota <= 69:
+        print("insuficiente")
+    elif nota <= 79:
+        print("bien")
+    elif nota <= 89:
+        print("Muy bien")
+    else:
+        print("excelente")
+nota()
 """
 39.
 Escribe una función que tome dos parámetros: figura (una cadena que puede ser "rectangulo", "circulo" o "triangulo") y
